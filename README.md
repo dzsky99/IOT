@@ -148,3 +148,56 @@ void loop() {
 ![image](https://github.com/user-attachments/assets/04ce1202-cd81-480b-b34f-4c22bfcc3a7f)
 ![image](https://github.com/user-attachments/assets/7f9fe4aa-5874-453d-ac3b-99b7cca90ae7)
 
+4주차 i2c lcd 통신
+
+```c
+#include <Wire.h> // i2c 통신을 위한 기본 라이브러리
+#include <LiquidCrystal_I2C.h> // i2c led 기본 라이브러리
+
+// 초음파 센서 lcd에 띄우기
+
+#define TRIG 13
+#define ECHO 12
+
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+
+void setup()
+{
+  Serial.begin(9600); 
+  pinMode(TRIG, OUTPUT);
+  pinMode(ECHO, INPUT);
+
+  lcd.init();  // i2c lcd 초기화
+  lcd.backlight(); // 백라이트켜기
+  lcd.print("LCD init");
+  delay(2000);
+  lcd.clear();
+}
+
+void loop()
+{
+  long duration, distance;
+  
+  digitalWrite(TRIG, LOW); 
+  delayMicroseconds(2);
+  digitalWrite(TRIG, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG, LOW);
+  
+  duration = pulseIn(ECHO, HIGH);
+  distance = duration / 58.2;
+
+  lcd.setCursor(0, 0);
+  lcd.print(distance);
+  lcd.print("cm");
+  delay(1000);
+  lcd.clear();
+
+  //lcd.print("Hello, World!");
+  
+  // for (int position = 0; position < 16; position++) {
+  //  lcd.scrollDisplayLeft();
+  //  delay(150);
+  // }
+}
+```
