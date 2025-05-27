@@ -108,13 +108,13 @@ ERROR: *** no cameras available ***
 ```
 
 
-## 중간고사 전 내용
+# 중간고사 전 내용
 
-// 수정 체크리스트 
-// 레이아웃 수정
-// 장치, 주차 별 설명 추가
+수정 체크리스트
+- ~~레이아웃 수정~~
+- 장치, 주차 별 설명 추가
 
-아두이노 2주차 초음파 센서 및 led 점등
+## 아두이노 2주차 초음파 센서 및 led 점등
 ```C
 // C++ code
 //
@@ -174,7 +174,7 @@ void loop()
   */
 ```
 
-3주차 미세먼지 센서 influxDB 사용 python 아두이노
+## 3주차 미세먼지 센서 influxDB 사용 python 아두이노
 
 ```python
 import serial
@@ -262,7 +262,7 @@ void loop() {
 ![image](https://github.com/user-attachments/assets/04ce1202-cd81-480b-b34f-4c22bfcc3a7f)
 ![image](https://github.com/user-attachments/assets/7f9fe4aa-5874-453d-ac3b-99b7cca90ae7)
 
-4주차 i2c lcd 통신
+## 4주차 i2c lcd 통신
 
 ```c
 #include <Wire.h> // i2c 통신을 위한 기본 라이브러리
